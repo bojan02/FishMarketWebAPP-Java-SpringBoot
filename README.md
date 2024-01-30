@@ -7,7 +7,7 @@ Web application with elementary functionalities for fish markets and the fish th
 SERVER:  
 • Spring Boot  
 • Spring Security  
-• JWT Token 
+• JWT Token  
 • Implementation of Mapper, Repository pattern, Service and Dependency Injection concept   
 • Persistence of data in a relational database on a local MySQL Server (initial values located in: ~/sql/initial_values.sql)
   
