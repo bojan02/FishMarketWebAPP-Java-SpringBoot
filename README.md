@@ -22,8 +22,8 @@ CLIENT (Single Page Application):
 • Bootstrap  
 
 Initial login accounts:  
-• User: bojan ; password: bojan  
-• User: admin ; password: admin   
+• User: bojan ; Password: bojan  
+• User: admin ; Password: admin   
 
 Steps to run an application:  
 1. go to ~/src/main/resources/application.properties
