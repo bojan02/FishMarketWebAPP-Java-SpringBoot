@@ -9,18 +9,20 @@ import com.bojan.fishmarket.service.FishMarketService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-@CrossOrigin("*")
+
 @AllArgsConstructor
 @RestController
 @RequestMapping("api")
 public class FishMarketsController {
     public FishMarketService fishMarketService;
 
+   // @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/fishmarkets")
     public ResponseEntity<List<FishMarketDTO>> getAllFishMarkets(){
         List<FishMarket> fishMarkets = fishMarketService.getAllFishMarkets();
@@ -28,6 +30,7 @@ public class FishMarketsController {
                 .collect(Collectors.toList()));
     }
 
+   // @PreAuthorize("hasRole('USER')")
     @GetMapping("/fishmarkets/{id}")
     public ResponseEntity<FishMarketDTO> getFishMarketById(@PathVariable("id") Long fishMarketId) {
         FishMarket fishMarket = fishMarketService.findOneFishMarket(fishMarketId);

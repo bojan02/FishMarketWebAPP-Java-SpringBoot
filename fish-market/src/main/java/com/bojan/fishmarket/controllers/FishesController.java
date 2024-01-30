@@ -9,13 +9,14 @@ import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-@CrossOrigin("*")
+
 @AllArgsConstructor
 @RestController
 @RequestMapping("api")
@@ -60,6 +61,7 @@ public class FishesController {
         return ResponseEntity.ok(fishesDTO);
     }
 
+    @PreAuthorize("isAuthenticated()")
     @PostMapping("/fishes")
     public ResponseEntity<?> postFish(@Valid @RequestBody FishDTO fishDTO, BindingResult bindingResult){
 
@@ -83,6 +85,7 @@ public class FishesController {
         return ResponseEntity.ok(fishDTO);
     }
 
+    @PreAuthorize("isAuthenticated()")
     @DeleteMapping({"/fishes/{id}"})
     public ResponseEntity<String> deleteFish(@PathVariable("id") Long fishId){
         Fish fish = fishService.findOneFish(fishId);
@@ -95,6 +98,7 @@ public class FishesController {
         return ResponseEntity.ok("Riba deleted succeessfully!");
     }
 
+    @PreAuthorize("isAuthenticated()")
     @PostMapping("/search")
     public ResponseEntity<List<FishDTO>> search(@RequestBody SearchDTO dto) {
         if (dto.getMin() < 1 || dto.getMax() < 1 || dto.getMax() > 1000 || dto.getMin() > dto.getMax()) {
