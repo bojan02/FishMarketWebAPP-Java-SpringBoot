@@ -1,5 +1,5 @@
 # FishMarketWebAPP-Java-SpringBoot  
-Final exam project of FTN Informatika .NET web development course rewritten in Java
+Final exam project of FTN Informatika .NET web development course rewritten in Java 
 Made in IntelliJ IDEA
 
 Web application with elementary functionalities for fish markets and the fish they sell, implemented using the following working frameworks, tools and techniques:
