@@ -20,3 +20,14 @@ CLIENT (Single Page Application):
 • HTML  
 • CSS  
 • Bootstrap  
+
+Initial login accounts:  
+• User: bojan ; password: bojan  
+• User: admin ; password: admin   
+
+Steps to run an application:  
+1. go to ~/src/main/resources/application.properties
+2. Edit spring.datasource.*  
+3. Run application  
+4. Execute initial values   
+5. Run client (index.html)  
