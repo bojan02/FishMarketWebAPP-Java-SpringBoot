@@ -28,6 +28,6 @@ Initial login accounts:
 Steps to run an application:  
 1. go to ~/src/main/resources/application.properties
 2. Edit spring.datasource.*  
-3. Run application  
+3. Run spring boot application  
 4. Execute initial values   
 5. Run client (index.html)  
